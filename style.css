@@ -14,7 +14,7 @@ Text Domain:  motaphoto
 
 
 /* Import des polices */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Space+Mono:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap'); 
 
 /*Général*/
 body {
@@ -23,28 +23,49 @@ body {
 
 /* Header */
 #logo {
-    margin-left: 100px;
     max-width: 50%;
     max-height: 50%;
 }
 
 .header {
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
-#navigation-principale li {
+#navigation-principale li, #navigation-footer li {
     position: relative;
     display: inline-block;
     padding: 10px;
     font-weight: 500;
-    margin-right: 100px;
 }
 
-#navigation-principale li a {
+#navigation-principale li a, #navigation-footer li a {
     text-decoration: none;
     color: black;
     font-weight: 400px;
     font-size: 16px;
+ 
+}
+
+/*Footer*/
+.footer {
+    height: 40px;    
+}
+
+.line {
+    border-bottom:1px solid black;
+}
+
+.menuFooter {
+    display: flex;
+    justify-content: center;
+}
+
+/*Contact*/
+#contactForm {
+    display: none;
 }

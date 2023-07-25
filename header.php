@@ -10,6 +10,9 @@
         <?php wp_head(); ?>
     </head>
 
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
+
 <header>
     <div class="header">
         <div class="logo">
@@ -18,7 +21,7 @@
     <div class="menuHeader">
     <nav id="navigation-principale" role="navigation" aria-label="<?php _e('Menu Header', 'text-domain'); ?>">
 <?php wp_nav_menu( array( 
-    'theme_location' => 'Menu Header' ) ); 
+    'theme_location' => 'menu-header' ) ); 
 ?>
     </nav>
     </div>
