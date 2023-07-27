@@ -16,7 +16,7 @@ Text Domain:  motaphoto
 /* Import des polices */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap'); 
 
-/*Général*/
+/* Général */
 body {
     font-family: 'Space Mono', monospace;
   }
@@ -51,7 +51,7 @@ body {
  
 }
 
-/*Footer*/
+/* Footer */
 .footer {
     height: 40px;    
 }
@@ -65,7 +65,7 @@ body {
     justify-content: center;
 }
 
-/*Contact*/
+/* Contact */
 #contactForm {
     display: none;
     position: fixed;
@@ -117,7 +117,7 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
   font-style: italic;
 }
 
-/*Page accueil*/
+/* Page accueil */
 .banner {
     background-image: url("./img/nathalie-0.jpeg");
 	min-height: 880px;
@@ -127,3 +127,16 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
 	align-items: center;
     margin-bottom: 50px;
 }
+
+/* Catalogue photos */
+.cataloguePhotos {
+    width: 100%;
+    column-count: 2;
+  }
+
+.cataloguePhotos img {
+
+    object-fit: cover;
+    object-position: center center;
+}
+  

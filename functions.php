@@ -16,27 +16,36 @@ function wpb_custom_new_menu() {
     add_action( 'init', 'wpb_custom_new_menu' );
 
 
-
 remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
 add_action( 'shutdown', function() {
    while ( @ob_end_flush() );
 } );
 
 
-/* Création des posts*/
-function my_cptui_add_post_types_to_instant_articles( $post_types ) {
-	
-    // Option 1: If you want ALL of your CPTUI items.
-    $cptui_post_types = cptui_get_post_type_slugs();
-
-    /* Option 2: If you want just some of them.
-    $cptui_post_types = array( 'my_post_type', 'my_other_post_type' );
-
-    return array_merge(
-        $post_types,
-        $cptui_post_types
-    );*/
+/* Affichage des Custom Fields dans le backoffice WP*/
+function ajouter_boite_personnalisee() {
+    add_meta_box(
+        'champs_personnalises_boite', // ID unique de la boîte personnalisée
+        'Champs personnalisés', // Titre de la boîte personnalisée
+        'afficher_champs_personnalises', // Fonction pour afficher le contenu de la boîte
+        'photo', // Nom du Custom Post Type
+        'normal', // Emplacement de la boîte (normal, side, advanced)
+        'high' // Priorité de la boîte (high, low)
+    );
 }
-add_filter( 'instant_articles_post_types', 'my_cptui_add_post_types_to_instant_articles' );
+add_action('add_meta_boxes', 'ajouter_boite_personnalisee');
+
+
+function afficher_champs_personnalises($post) {
+    // Récupérez les valeurs des champs personnalisés
+    $valeur_champ_1 = get_post_meta($post->ID, 'Référence', true);
+    $valeur_champ_2 = get_post_meta($post->ID, 'Type', true);
+    // ...
+
+    // Affichez les champs personnalisés dans la boîte
+    echo '<p><strong>Champ 1 :</strong> ' . $valeur_champ_1 . '</p>';
+    echo '<p><strong>Champ 2 :</strong> ' . $valeur_champ_2 . '</p>';
+    // ...
+}
 
 ?>

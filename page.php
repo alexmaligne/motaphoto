@@ -20,8 +20,10 @@ get_header();
 	alt="Logo Photographe Event">
 </section>
 
+
+<section class="cataloguePhotos">
 <?php
-// Créez un objet WP_Query pour récupérer les posts de votre Custom Post Type
+// Créez un objet WP_Query pour récupérer les posts du Custom Post Type
     $args = array(
         'post_type' => 'photo', // Nom du Custom Post Type
         'posts_per_page' => 12, // Nombre de posts que à afficher par page
@@ -45,6 +47,8 @@ get_header();
         echo 'Aucun post trouvé.';
     }
 ?>
+
+</section>
 
 <?php
 
