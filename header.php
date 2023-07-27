@@ -16,7 +16,7 @@
 <header>
     <div class="header">
         <div class="logo">
-            <img id="logo" src="<?php echo get_stylesheet_directory_uri() . './img/Logo.png'; ?> " alt="Logo Nathalie Mota"/>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img id="logo" src="<?php echo get_stylesheet_directory_uri() . './img/Logo.png'; ?> " alt="Logo Nathalie Mota"/>
         </div>
     <div class="menuHeader">
     <nav id="navigation-principale" role="navigation" aria-label="<?php _e('Menu Header', 'text-domain'); ?>">
