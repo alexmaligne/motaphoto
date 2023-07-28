@@ -15,13 +15,43 @@ get_header();
 <section class="banner">
 <img 
 	id="logoHeader"
-    data-parallax="0.3"
+    data-parallax="0.4"
 	src="<?php echo get_template_directory_uri() . '/img/Titre header.png'; ?> " 
 	alt="Logo Photographe Event">
 </section>
 
+<section class="cataloguePhotos"> 
 
-<section class="cataloguePhotos">
+<div class="listes">
+<div class="listeCategories">
+<?php 
+// Afficher la liste déroulante des catégories et des formats
+	$args = array(
+		'show_option_all' => 'Catégories',
+		'taxonomy' => 'categorie',
+		'orderby' => 'name',
+		'order' => 'ASC',
+	);
+?>
+</div>
+
+<div class="listeFormats">
+<?php 
+	wp_dropdown_categories($args);
+
+	$args = array(
+		'show_option_all' => 'Formats',
+		'taxonomy' => 'format',
+		'orderby' => 'name',
+		'order' => 'ASC',
+	);
+
+	wp_dropdown_categories($args);
+?>
+</div>
+</div>
+
+<div class="photos">
 <?php
 // Créez un objet WP_Query pour récupérer les posts du Custom Post Type
     $args = array(
@@ -47,9 +77,8 @@ get_header();
         echo 'Aucun post trouvé.';
     }
 ?>
-
+</div>
 </section>
 
 <?php
-
 get_footer();

@@ -135,8 +135,7 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
   }
 
 .cataloguePhotos img {
-
-    object-fit: cover;
-    object-position: center center;
+    width: 500px;
+    height: 500px;
 }
   
