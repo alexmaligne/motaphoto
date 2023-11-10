@@ -114,9 +114,22 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
 }
 
 .wpcf7-form h2 {
-  font-style: italic;
-  width: 100%;
-  word-wrap: break-word;
+    text-align: center;
+    font-style: italic;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
+    width: 100%;
+}
+
+textarea.wpcf7-form-control.wpcf7-textarea {
+    width: 100%;
+}
+
+input.wpcf7-form-control.has-spinner.wpcf7-submit {
+    width: 100%;
 }
 
 /* Page accueil */

@@ -44,9 +44,12 @@ get_header();
 <div class="photos">
 <?php
 // Créez un objet WP_Query pour récupérer les posts du Custom Post Type
+    $paged = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1;
+    // echo get_query_var( 'page' );
     $args = array(
         'post_type' => 'photo', // Nom du Custom Post Type
         'posts_per_page' => 12, // Nombre de posts que à afficher par page
+        'paged' => $paged,
     );
     $query = new WP_Query($args);
 
@@ -66,7 +69,10 @@ get_header();
         echo 'Aucun post trouvé.';
     }
 ?>
-
+    <div class="pagination">
+        <?php previous_posts_link("Page précédente", $query->max_num_pages); ?>
+        <?php next_posts_link("Page suivante", $query->max_num_pages); ?>
+    </div>
 </div>
 </section>
 
