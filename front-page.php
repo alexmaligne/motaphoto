@@ -51,6 +51,7 @@ get_header();
         'posts_per_page' => 12, // Nombre de posts que à afficher par page
         'paged' => $paged,
     );
+
     $query = new WP_Query($args);
 
     // Vérifiez si des posts existent

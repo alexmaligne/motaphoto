@@ -8,7 +8,7 @@ Template:
 Version:      1.0.0
 License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
-Tags:         boissons, naturel, plantes
+Tags:         photos, photographe, mariage
 Text Domain:  motaphoto
 */
 
@@ -58,6 +58,8 @@ body {
 
 .line {
     border-bottom:1px solid black;
+    margin-left: 2%;
+    width: 92%;
 }
 
 .menuFooter {
@@ -156,4 +158,78 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
     max-width: 564px;
     height: 500px;
 }
+
+/* Page single-photo */
+.displayFlexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.textPhoto {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.text {
+    padding-left: 30px;
+}
+
+.textPhoto h2 {
+    width: 402px;
+    font-size: 44px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+hr {
+    border-top: 0px solid #000;
+    width: 95%;
+}
+
+.affichagePhoto {
+    width: 50%;
+}
+
+.blocContac {
+    width: 50%;
+}
+
+.contact {
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Bouton contact */
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(
+      to top left,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0)
+    );
+    box-shadow:
+      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  }
   
+  .styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+  }
+  
+  .styled:active {
+    box-shadow:
+      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  }

@@ -21,4 +21,33 @@ add_action( 'shutdown', function() {
    while ( @ob_end_flush() );
 } );
 
+
+/* Ajout des taxonomies Catégories & Formats */
+add_action( 'init', function() {
+	register_taxonomy( 'categorie', array(
+	0 => 'photo',
+), array(
+	'labels' => array(
+		'singular_name' => 'Catégorie',
+		'name' => 'Catégories',
+	),
+	'public' => true,
+	'hierarchical' => true,
+	'show_in_rest' => false,
+) );
+
+	register_taxonomy( 'format', array(
+	0 => 'photo',
+), array(
+	'labels' => array(
+		'singular_name' => 'Formats',
+		'name' => 'Formats',
+	),
+	'public' => true,
+	'hierarchical' => true,
+	'show_in_rest' => false,
+	'show_tagcloud' => false,
+) );
+} );
+
 ?>

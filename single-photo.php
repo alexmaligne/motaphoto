@@ -6,15 +6,46 @@ while ( have_posts() ) :
 	the_post();
 ?>
 
-<a href="<?php the_permalink() ?>">
+<a href="<?php the_permalink() ?>"></a>
+
 <div class="photo">
+	<div class="displayFlexRow">
+		<div class="textPhoto">
+			<div class="text">
+				<?php the_title('<h2>', '</h2>'); ?>
+				<p>RÉFÉRENCE :</p>
+				<p>CATÉGORIE :</p>
+				<p>FORMAT :</p>
+				<p>TYPE :</p>
+				<p>ANNÉE :</p>
+				<hr />
+			</div>
+		</div>
+		<div class="affichagePhoto">
+		<?php the_content(); ?>
+		</div>
+	</div>
+
+	<div class="displayFlexRow">
+		<div class="blocContac">
+			<div class="contact">
+					<p>Cette photo vous intéresse ?</p>
+			</div>
+			<div><button 
+				class="favorite styled" 
+				type="button">Contact</button>
+			</div>
+		</div>
+	</div>
 
 <?php
-    the_title('<h2>', '</h2>');
-    the_content();
+	$terms = get_terms( array(
+        'taxonomy'   => 'post_tag',
+        'hide_empty' => false,
+    ) );
 ?>
 </div>
-</a>
+
 
 <?php
 	if ( is_attachment() ) {
