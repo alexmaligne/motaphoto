@@ -13,16 +13,16 @@ while ( have_posts() ) :
 		<div class="textPhoto">
 			<div class="text">
 				<?php the_title('<h2>', '</h2>'); ?>
-				<p>RÉFÉRENCE :</p>
+				<p>RÉFÉRENCE : <span id="photoReference"><?php echo get_field( "reference" ) ?></span></p>
 				<p>CATÉGORIE :</p>
 				<p>FORMAT :</p>
-				<p>TYPE :</p>
-				<p>ANNÉE :</p>
-				<hr />
+				<p>TYPE : <span id="photoReference"><?php echo get_field( "type" ) ?></span></p>
+				<p>ANNÉE : <span id="photoReference"><?php echo get_field( "annee" ) ?></span></p>
 			</div>
+			<div><hr></div>
 		</div>
 		<div class="affichagePhoto">
-		<?php the_content(); ?>
+			<?php the_content(); ?>
 		</div>
 	</div>
 
@@ -31,8 +31,10 @@ while ( have_posts() ) :
 			<div class="contact">
 					<p>Cette photo vous intéresse ?</p>
 			</div>
-			<div><button 
-				class="favorite styled" 
+			<div class="bouton">
+				<button
+				id="contactBTNWithPhotoRef"
+				class="boutonContact" 
 				type="button">Contact</button>
 			</div>
 		</div>
@@ -40,7 +42,7 @@ while ( have_posts() ) :
 
 <?php
 	$terms = get_terms( array(
-        'taxonomy'   => 'post_tag',
+        'taxonomy'   => 'categorie',
         'hide_empty' => false,
     ) );
 ?>

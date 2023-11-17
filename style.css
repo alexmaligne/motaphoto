@@ -173,7 +173,7 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
 }
 
 .text {
-    padding-left: 30px;
+    padding-left: 40px;
 }
 
 .textPhoto h2 {
@@ -185,51 +185,70 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
 
 hr {
     border-top: 0px solid #000;
-    width: 95%;
+    width: 92%;
 }
 
 .affichagePhoto {
     width: 50%;
+    margin-bottom: 10px;
+}
+
+.wp-block-image {
+    height: 100%;
+}
+
+.wp-block-image img {
+    object-fit: cover;
+    height: 100%;
 }
 
 .blocContac {
+    height: 118px;
     width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .contact {
-    padding-left: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-left: 40px;
+    width: 50%;
 }
 
 /* Bouton contact */
-.styled {
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
+.bouton {
+    width: 50%;
+    padding-right: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.boutonContact {
+    width: 272px;
+    height: 50px;
+    padding: 8px 15px 8px 15px;
     text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    background-color: rgba(220, 0, 0, 1);
-    background-image: linear-gradient(
-      to top left,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2) 30%,
-      rgba(0, 0, 0, 0)
-    );
-    box-shadow:
-      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    color: black;
+    border-radius: 2px;
+    background-color: #D8D8D8;
   }
   
-  .styled:hover {
-    background-color: rgba(255, 0, 0, 1);
+  .boutonContact:hover {
+    color: white;
+    background-color: black;
   }
-  
-  .styled:active {
-    box-shadow:
-      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
-  }
+
+
+
+
+  /* Définir la largeur et la hauteur en pourcentage de la fenêtre d'affichage */
+.element {
+    width: 50vw;
+    height: 40vh;
+}
+
+/* Définir la marge interne et externe en fonction de la largeur et de la hauteur de la fenêtre d'affichage */
+.container {
+    padding: 5vh 3vw;
+    margin: 2vh 1vw;
+}
