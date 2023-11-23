@@ -14,10 +14,10 @@ while ( have_posts() ) :
 			<div class="text">
 				<?php the_title('<h2>', '</h2>'); ?>
 				<p>RÉFÉRENCE : <span id="photoReference"><?php echo get_field( "reference" ) ?></span></p>
-				<p>CATÉGORIE :</p>
-				<p>FORMAT :</p>
-				<p>TYPE : <span id="photoReference"><?php echo get_field( "type" ) ?></span></p>
-				<p>ANNÉE : <span id="photoReference"><?php echo get_field( "annee" ) ?></span></p>
+				<p>CATÉGORIE : <span id="photoCategorie"><?php the_terms( $post->ID, 'categorie' ); ?></span></p>
+				<p>FORMAT : <span id="photoFormat"><?php the_terms( $post->ID, 'format' ); ?></span></p> 
+				<p>TYPE : <span id="photoType"><?php echo get_field( "type" ) ?></span></p>
+				<p>ANNÉE : <span id="photoAnnee"><?php echo get_field( "annee" ) ?></span></p>
 			</div>
 			<div><hr></div>
 		</div>
@@ -38,16 +38,18 @@ while ( have_posts() ) :
 				type="button">Contact</button>
 			</div>
 		</div>
-	</div>
 
-<?php
-	$terms = get_terms( array(
-        'taxonomy'   => 'categorie',
-        'hide_empty' => false,
-    ) );
-?>
+		<div class="blocNavigation">
+			<div class="navigationPhotos">
+				<img class="thumbnail" src="<?php echo get_stylesheet_directory_uri() . '/img/nathalie-14.jpeg'; ?>" alt="Photo">
+				<a href="#" id="prev"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+				<a href="#" id="next"><i class="fa-solid fa-arrow-right fa-lg"></i></a>
+			</div>
+		</div>
+	</div>
 </div>
 
+<?php get_template_part( 'template-parts/photo_block' ); ?>
 
 <?php
 	if ( is_attachment() ) {
