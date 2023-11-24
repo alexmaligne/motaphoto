@@ -58,7 +58,6 @@ body {
 .line {
     border-bottom:1px solid black;
     margin-left: 1%;
-    margin-top: 40px;
 }
 
 .menuFooter {
@@ -172,7 +171,7 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
 }
 
 .text {
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .textPhoto h2 {
@@ -184,7 +183,6 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
 
 hr {
     border-top: 0px solid #000;
-    width: 98%;
 }
 
 .affichagePhoto {
@@ -201,7 +199,7 @@ hr {
 
 .wp-block-image img {
     object-fit: cover;
-    height: 100%;
+    width: 100%;
 }
 
 .blocContac {
@@ -213,7 +211,7 @@ hr {
 }
 
 .contact {
-    margin-left: 10px;
+    margin-left: 5px;
     width: 50%;
 }
 
@@ -246,20 +244,32 @@ hr {
     padding-right: 10px;
 }
 
-.navigationPhotos {
+#banner {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: end;
 }
 
-.thumbnail {
+#banner .fleche {
+
+}
+
+#banner .fleche_precedente {
+
+}
+
+#banner .fleche_suivante {
+
+}
+
+.banner-img {
     width: 10%;
 }
 
 /* Photos Apparentées */
 h3 {
-    margin-left: 10px;
+    margin-left: 5px;
     font-weight: 400;
 }
 
@@ -274,5 +284,8 @@ h3 {
 }
 
 .boutonPhotos {
-
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }

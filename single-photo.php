@@ -5,6 +5,8 @@ get_header();
 while ( have_posts() ) :
 	the_post();
 ?>
+<?php $format=get_the_terms( $post->ID, 'format' ); ?>
+<?php $categorie=get_the_terms( $post->ID, 'categorie' ); ?>
 
 <a href="<?php the_permalink() ?>"></a>
 
@@ -14,8 +16,8 @@ while ( have_posts() ) :
 			<div class="text">
 				<?php the_title('<h2>', '</h2>'); ?>
 				<p>RÉFÉRENCE : <span id="photoReference"><?php echo get_field( "reference" ) ?></span></p>
-				<p>CATÉGORIE : <span id="photoCategorie"><?php the_terms( $post->ID, 'categorie' ); ?></span></p>
-				<p>FORMAT : <span id="photoFormat"><?php the_terms( $post->ID, 'format' ); ?></span></p> 
+				<p>CATÉGORIE : <span id="photoCategorie"><?php echo $categorie[0]->name; ?></span></p>
+				<p>FORMAT : <span id="photoFormat"><?php echo $format[0]->name; ?></span></p> 
 				<p>TYPE : <span id="photoType"><?php echo get_field( "type" ) ?></span></p>
 				<p>ANNÉE : <span id="photoAnnee"><?php echo get_field( "annee" ) ?></span></p>
 			</div>
@@ -40,16 +42,15 @@ while ( have_posts() ) :
 		</div>
 
 		<div class="blocNavigation">
-			<div class="navigationPhotos">
-				<img class="thumbnail" src="<?php echo get_stylesheet_directory_uri() . '/img/nathalie-14.jpeg'; ?>" alt="Photo">
-				<a href="#" id="prev"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
-				<a href="#" id="next"><i class="fa-solid fa-arrow-right fa-lg"></i></a>
+			<div id="banner">
+				<img class="banner-img" src="<?php echo get_stylesheet_directory_uri() . '/img/slideshow/nathalie-0.jpeg'; ?>" alt="Photo">
+				<img class="fleche fleche_precedente" src="<?php echo get_stylesheet_directory_uri() . '/img/line-6.png'; ?>" alt="Flèche précédente">
+        		<img class="fleche fleche_suivante" src="<?php echo get_stylesheet_directory_uri() . '/img/line-7.png'; ?>" alt="Flèche suivante">
 			</div>
 		</div>
 	</div>
+	<?php get_template_part( 'template-parts/photo_block' ); ?>
 </div>
-
-<?php get_template_part( 'template-parts/photo_block' ); ?>
 
 <?php
 	if ( is_attachment() ) {

@@ -1,38 +1,62 @@
+const slides = [
+	{
+		"image":"nathalie-0.jpeg",
+		"tagLine":""
+	},
+	{
+		"image":"nathalie-1.jpeg",
+		"tagLine":""
+	},
+	{
+		"image":"nathalie-2.jpeg",
+		"tagLine":""
+	},
+	{
+		"image":"nathalie-3.jpeg",
+		"tagLine":""
+	}
+]
 
-// Affiche la prévisualisation au survol
-thumbnails.forEach((thumbnail) => {
-thumbnail.addEventListener("mouseover", function () {
-    const index = parseInt(thumbnail.getAttribute("data-index"));
-    previewImage.src = thumbnail.href;
-    currentIndex = index;
-    preview.style.display = "block";
-});
+let diaporama = 0
+let arrowLeft = document.querySelector("#banner .fleche_precedente");
+let arrowRight = document.querySelector("#banner .fleche_suivante");
+let imageSlider = document.querySelector(".banner-img");
 
-thumbnail.addEventListener("mouseout", function () {
-    preview.style.display = "none";
-});
-});
 
-// Navigation vers la photo précédente
-prevButton.addEventListener("click", function (event) {
-event.preventDefault();
-if (currentIndex > 0) {
-    currentIndex--;
-    updatePreview();
+function bulletPoints() {
+	let codeHtml =""
+
+for(let images = 0; images<slides.length; images++){ 
+
+	if(images == diaporama){codeHtml}
+	else{
+		codeHtml
+	}
 }
-});
 
-// Navigation vers la photo suivante
-nextButton.addEventListener("click", function (event) {
-event.preventDefault();
-if (currentIndex < thumbnails.length - 1) {
-    currentIndex++;
-    updatePreview();
+innerHTML = codeHtml
 }
+
+bulletPoints()
+
+	arrowLeft.addEventListener("click", function () {
+		diaporama = diaporama - 1;
+
+		if(diaporama < 0) {
+			diaporama = 3
+		}
+
+		imageSlider.src = "/img/slideshow/" + slides[diaporama].image;
+		bulletPoints();
 });
 
-// Met à jour la prévisualisation en fonction de l'index actuel
-function updatePreview() {
-const thumbnail = thumbnails[currentIndex];
-previewImage.src = thumbnail.href;
-};
+	arrowRight.addEventListener("click", function () {
+		diaporama = diaporama + 1;
+
+		if(diaporama > 3) {
+			diaporama = 0
+		}
+
+		imageSlider.src = "/img/slideshow/" + slides[diaporama].image;
+		bulletPoints();
+});
