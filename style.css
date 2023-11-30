@@ -185,6 +185,11 @@ hr {
     border-top: 0px solid #000;
 }
 
+.photo {
+    width: 100%;
+    padding: 10px;
+}
+
 .affichagePhoto {
     width: 50vw;
     margin-bottom: 10px;
@@ -193,7 +198,6 @@ hr {
 .wp-block-image {
     height: 100%;
     display: flex;
-    justify-content: flex-end;
     padding-right: 10px;
 }
 
@@ -275,12 +279,11 @@ h3 {
 
 .blocPhotosApparentees {
     display: flex;
-    flex-direction: row;
 }
 
-.photo {
-    width: 100%;
-    padding: 10px;
+.affichagePhotoApparantees {
+    width: 50vw;
+    height: 60vh;
 }
 
 .boutonPhotos {
@@ -289,3 +292,18 @@ h3 {
     margin-top: 20px;
     margin-bottom: 30px;
 }
+
+/* Pagination */
+.pagination .current {
+    font-weight: bold;
+}
+
+
+/* Lightbox */
+.lightbox__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0 50px;
+  }

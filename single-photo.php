@@ -42,14 +42,30 @@ while ( have_posts() ) :
 		</div>
 
 		<div class="blocNavigation">
+		<pre>
+		<?php
+		$navigationPrevious=get_previous_post();
+		?>
+		</pre>
+	
 			<div id="banner">
-				<img class="banner-img" src="<?php echo get_stylesheet_directory_uri() . '/img/slideshow/nathalie-0.jpeg'; ?>" alt="Photo">
-				<img class="fleche fleche_precedente" src="<?php echo get_stylesheet_directory_uri() . '/img/line-6.png'; ?>" alt="Flèche précédente">
-        		<img class="fleche fleche_suivante" src="<?php echo get_stylesheet_directory_uri() . '/img/line-7.png'; ?>" alt="Flèche suivante">
+				<a href="<?php echo get_permalink($navigationPrevious->ID) ?>" style="display: block; position: relative;">
+					<div class="" style="width: 100px; height: 100px; ">
+					<?php echo $navigationPrevious->post_content ;
+					?>
+					</div>
+					<img class="fleche fleche_precedente" src="<?php echo get_stylesheet_directory_uri() . '/img/line-6.png'; ?>" alt="Flèche précédente">
+				</a>
+        		<a>
+					<img class="fleche fleche_suivante" src="<?php echo get_stylesheet_directory_uri() . '/img/line-7.png'; ?>" alt="Flèche suivante">
+				</a>
 			</div>
 		</div>
 	</div>
-	<?php get_template_part( 'template-parts/photo_block' ); ?>
+
+
+	<?php
+	get_template_part( 'template-parts/photo_block' ); ?>
 </div>
 
 <?php
@@ -68,6 +84,17 @@ while ( have_posts() ) :
 		comments_template();
 	}
 
-endwhile; // End of the loop.
+	endwhile; // End of the loop.
+
+
+echo '<div class="pagination">';
+echo paginate_links(array(
+    'base' => get_pagenum_link(1) . '%_%',
+    'format' => '/page/%#%', // Change to match your URL structure if needed
+    'current' => $current_page,
+    'total' => $total_pages,
+));
+echo '</div>';
+
 
 get_footer();

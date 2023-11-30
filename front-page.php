@@ -70,6 +70,18 @@ get_header();
         echo 'Aucun post trouvé.';
     }
 ?>
+
+<!-- Lightbox -->
+<div class="lightbox">
+  <button class="lightbox__close">Fermer</button>
+  <button class="lightbox__next">Suivant</button>
+  <button class="lightbox__prev">Précédent</button>
+  <div class="lightbox__container">
+    <img src="chemin/vers/image.jpg" alt="">
+  </div>
+</div>
+
+
     <div class="pagination">
         <?php previous_posts_link("Page précédente", $query->max_num_pages); ?>
         <?php next_posts_link("Page suivante", $query->max_num_pages); ?>
