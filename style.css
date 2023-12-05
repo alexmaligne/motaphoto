@@ -251,25 +251,37 @@ hr {
 #banner {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: end;
-}
-
-#banner .fleche {
-
-}
-
-#banner .fleche_precedente {
-
-}
-
-#banner .fleche_suivante {
-
+    flex-direction: row;
+    justify-content: end;
 }
 
 .banner-img {
     width: 10%;
 }
+
+.fleche {
+    position: relative;
+}
+
+.fleche:hover .photoPrevious {
+    display: block;
+}
+
+.photoPrevious {
+    width: 100px; 
+    height: 100px;
+    display: none;
+}
+
+.fleche:hover .photoNext {
+    display: block;
+}
+.photoNext {
+    width: 100px; 
+    height: 100px;
+    display: none;
+}
+
 
 /* Photos Apparentées */
 h3 {
@@ -299,7 +311,7 @@ h3 {
 }
 
 
-/* Lightbox */
+/* Lightbox 
 .lightbox__container {
     display: flex;
     align-items: center;
@@ -307,3 +319,4 @@ h3 {
     min-height: 100vh;
     margin: 0 50px;
   }
+  */

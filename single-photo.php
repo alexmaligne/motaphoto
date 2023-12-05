@@ -42,22 +42,25 @@ while ( have_posts() ) :
 		</div>
 
 		<div class="blocNavigation">
-		<pre>
+
 		<?php
 		$navigationPrevious=get_previous_post();
+		$navigationNext=get_next_post();
 		?>
-		</pre>
-	
 			<div id="banner">
-				<a href="<?php echo get_permalink($navigationPrevious->ID) ?>" style="display: block; position: relative;">
-					<div class="" style="width: 100px; height: 100px; ">
+				<a class="fleche" href="<?php echo get_permalink($navigationPrevious->ID) ?>" >
+					<div class="photoPrevious">
 					<?php echo $navigationPrevious->post_content ;
 					?>
 					</div>
-					<img class="fleche fleche_precedente" src="<?php echo get_stylesheet_directory_uri() . '/img/line-6.png'; ?>" alt="Flèche précédente">
+					<img class="fleche_precedente" src="<?php echo get_stylesheet_directory_uri() . '/img/line-6.png'; ?>" alt="Flèche précédente">
 				</a>
-        		<a>
-					<img class="fleche fleche_suivante" src="<?php echo get_stylesheet_directory_uri() . '/img/line-7.png'; ?>" alt="Flèche suivante">
+        		<a class="fleche" href="<?php echo get_permalink($navigationNext->ID) ?>" >
+					<div class="photoNext">
+					<?php echo $navigationNext->post_content ;
+					?>
+					</div>
+					<img class="fleche_suivante" src="<?php echo get_stylesheet_directory_uri() . '/img/line-7.png'; ?>" alt="Flèche suivante">
 				</a>
 			</div>
 		</div>
@@ -87,14 +90,14 @@ while ( have_posts() ) :
 	endwhile; // End of the loop.
 
 
-echo '<div class="pagination">';
-echo paginate_links(array(
-    'base' => get_pagenum_link(1) . '%_%',
-    'format' => '/page/%#%', // Change to match your URL structure if needed
-    'current' => $current_page,
-    'total' => $total_pages,
-));
-echo '</div>';
+//echo '<div class="pagination">';
+//echo paginate_links(array(
+//    'base' => get_pagenum_link(1) . '%_%',
+//    'format' => '/page/%#%', // Change to match your URL structure if needed
+//    'current' => $current_page,
+//    'total' => $total_pages,
+//));
+//echo '</div>';
 
 
 get_footer();
