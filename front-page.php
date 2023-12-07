@@ -2,7 +2,12 @@
 get_header();
 ?>
 
-<section class="banner">
+<?php $photosHeader = new WP_Query( array ( "post_type"=>"photo", 'orderby' => 'rand', 'posts_per_page' => '1' ) );
+$photoHeader=$photosHeader->posts[0]->post_content;
+?>
+
+<section class="bannerHero">
+    <?php echo $photoHeader ?>
 <img 
 	id="logoHeader"
     data-parallax="0.4"
@@ -48,7 +53,7 @@ get_header();
     // echo get_query_var( 'page' );
     $args = array(
         'post_type' => 'photo', // Nom du Custom Post Type
-        'posts_per_page' => 12, // Nombre de posts que à afficher par page
+        'posts_per_page' => 8, // Nombre de posts que à afficher par page
         'paged' => $paged,
     );
 
@@ -71,7 +76,7 @@ get_header();
     }
 ?>
 
-<!-- Lightbox -->
+<!-- Lightbox 
 <div class="lightbox">
   <button class="lightbox__close">Fermer</button>
   <button class="lightbox__next">Suivant</button>
@@ -87,7 +92,7 @@ get_header();
         <?php next_posts_link("Page suivante", $query->max_num_pages); ?>
     </div>
 </div>
-</section>
+</section> -->
 
 <?php
 get_footer();

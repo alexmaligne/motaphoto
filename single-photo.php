@@ -48,14 +48,14 @@ while ( have_posts() ) :
 		$navigationNext=get_next_post();
 		?>
 			<div id="banner">
-				<a class="fleche" href="<?php echo get_permalink($navigationPrevious->ID) ?>" >
+				<a class="flechePrevious" href="<?php echo get_permalink($navigationPrevious->ID) ?>" >
 					<div class="photoPrevious">
 					<?php echo $navigationPrevious->post_content ;
 					?>
 					</div>
 					<img class="fleche_precedente" src="<?php echo get_stylesheet_directory_uri() . '/img/line-6.png'; ?>" alt="Flèche précédente">
 				</a>
-        		<a class="fleche" href="<?php echo get_permalink($navigationNext->ID) ?>" >
+        		<a class="flecheNext" href="<?php echo get_permalink($navigationNext->ID) ?>" >
 					<div class="photoNext">
 					<?php echo $navigationNext->post_content ;
 					?>

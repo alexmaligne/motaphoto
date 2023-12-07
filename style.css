@@ -133,8 +133,7 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
 }
 
 /* Page accueil */
-.banner {
-    background-image: url("./img/nathalie-0.jpeg");
+.bannerHero .wp-block-image img {
 	min-height: 880px;
 	background-size: cover;
 	display: flex;
@@ -142,6 +141,17 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
 	align-items: center;
     margin-bottom: 50px;
 }
+
+.bannerHero {
+    position: relative;
+}
+
+#logoHeader {
+    position: absolute;
+    top: calc(50% - (142px/2));
+    right: calc(50% - (1000px/2));
+}
+
 
 /* Catalogue photos */
 .photos {
@@ -250,20 +260,24 @@ hr {
 
 #banner {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: end;
+    column-gap: 35px;
 }
 
 .banner-img {
     width: 10%;
 }
 
-.fleche {
+.flechePrevious {
     position: relative;
+    display: flex;
+    align-items: end;
 }
 
-.fleche:hover .photoPrevious {
+.flechePrevious:hover .photoPrevious {
     display: block;
 }
 
@@ -271,15 +285,27 @@ hr {
     width: 100px; 
     height: 100px;
     display: none;
+    position: absolute;
+    left: -5px;
+    top: 0;
 }
 
-.fleche:hover .photoNext {
+.flecheNext {
+    position: relative;
+    display: flex;
+    align-items: end;
+}
+
+.flecheNext:hover .photoNext {
     display: block;
 }
 .photoNext {
     width: 100px; 
     height: 100px;
     display: none;
+    position: absolute;
+    right: -10px;
+    top: 0;
 }
 
 
