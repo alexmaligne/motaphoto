@@ -50,6 +50,11 @@ body {
     font-size: 16px;
 }
 
+#navigation-principale li a:hover, #navigation-footer li a:hover {
+    font-size: 20px;
+}
+
+
 /* Footer */
 .footer {
     height: 40px;    
@@ -275,6 +280,11 @@ hr {
     position: relative;
     display: flex;
     align-items: end;
+    transition: all 3s ease-out;
+}
+
+.flechePrevious:hover {
+    transform: scale(1.1);
 }
 
 .flechePrevious:hover .photoPrevious {
@@ -294,6 +304,14 @@ hr {
     position: relative;
     display: flex;
     align-items: end;
+}
+
+.fleche_suivante {
+    transition: all 1s ease-out;
+}
+
+.flecheNext:hover .fleche_suivante {
+    transform: scale(1.3);
 }
 
 .flecheNext:hover .photoNext {
@@ -334,6 +352,24 @@ h3 {
 /* Pagination */
 .pagination .current {
     font-weight: bold;
+}
+
+/* Filtre et tri */
+.listeFormats {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+select#cat.postform {
+    background-color: transparent;
+    width: 260px;
+    height: 43px;
+    border-radius: 8px;
+    border-width: 1.3px;
+    border-color: #B8BBC2;
+    padding-left:18px;
+    text-transform: uppercase;
 }
 
 

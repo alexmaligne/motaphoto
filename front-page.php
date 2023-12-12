@@ -90,9 +90,17 @@ $photoHeader=$photosHeader->posts[0]->post_content;
     <div class="pagination">
         <?php previous_posts_link("Page précédente", $query->max_num_pages); ?>
         <?php next_posts_link("Page suivante", $query->max_num_pages); ?>
-    </div>
+    </div>-->
 </div>
-</section> -->
+
+<div class="boutonPaginationInfinie">
+				<button
+				id="boutonPagination"
+				class="boutonPagination" 
+				type="button">Charger plus</button>
+			</div>
+
+</section> 
 
 <?php
 get_footer();
