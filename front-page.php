@@ -17,65 +17,66 @@ $photoHeader=$photosHeader->posts[0]->post_content;
 
 <section class="cataloguePhotos"> 
 
-<div class="listes">
-<div class="listeCategories">
-<?php 
-// Afficher la liste déroulante des catégories et des formats
-	$args = array(
-		'show_option_all' => 'Catégories',
-		'taxonomy' => 'categorie',
-		'orderby' => 'name',
-		'order' => 'ASC',
-	);
-?>
-</div>
+    <div class="listes">
+        <div class="listeCategories">
+            <?php 
+            // Afficher la liste déroulante des catégories et des formats
+                $args = array(
+                    'show_option_all' => 'Catégories',
+                    'taxonomy' => 'categorie',
+                    'orderby' => 'name',
+                    'order' => 'ASC',
+                );
+            ?>
+        </div>
 
-<div class="listeFormats">
-<?php 
-	wp_dropdown_categories($args);
+        <div class="listeFormats">
+            <?php 
+                wp_dropdown_categories($args);
 
-	$args = array(
-		'show_option_all' => 'Formats',
-		'taxonomy' => 'format',
-		'orderby' => 'name',
-		'order' => 'ASC',
-	);
+                $args = array(
+                    'show_option_all' => 'Formats',
+                    'taxonomy' => 'format',
+                    'orderby' => 'name',
+                    'order' => 'ASC',
+                );
 
-	wp_dropdown_categories($args);
-?>
-</div>
-</div>
+                wp_dropdown_categories($args);
+            ?>
+        </div>
+    </div>
 
-<div class="photos">
-<?php
-// Créez un objet WP_Query pour récupérer les posts du Custom Post Type
-    $paged = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1;
-    // echo get_query_var( 'page' );
-    $args = array(
-        'post_type' => 'photo', // Nom du Custom Post Type
-        'posts_per_page' => 8, // Nombre de posts que à afficher par page
-        'paged' => $paged,
-    );
 
-    $query = new WP_Query($args);
+    <div class="photos">
+        <?php
+        // Créez un objet WP_Query pour récupérer les posts du Custom Post Type
+            $paged = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1;
+            // echo get_query_var( 'page' );
+            $args = array(
+                'post_type' => 'photo', // Nom du Custom Post Type
+                'posts_per_page' => 8, // Nombre de posts que à afficher par page
+                'paged' => $paged,
+            );
 
-    // Vérifiez si des posts existent
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
+            $query = new WP_Query($args);
 
-            // Affichez le titre et le contenu du post
-			get_template_part( 'template-parts/content/content-single' );
-        }
+            // Vérifiez si des posts existent
+            if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
 
-        // Réinitialisez les données post
-        wp_reset_postdata();
-    } else {
-        // Aucun post trouvé
-        echo 'Aucun post trouvé.';
-    }
-?>
+                    // Affichez le titre et le contenu du post
+                    get_template_part( 'template-parts/content/content-single' );
+                }
 
+                // Réinitialisez les données post
+                wp_reset_postdata();
+            } else {
+                // Aucun post trouvé
+                echo 'Aucun post trouvé.';
+            }
+        ?>
+ 
 <!-- Lightbox 
 <div class="lightbox">
   <button class="lightbox__close">Fermer</button>
@@ -84,23 +85,18 @@ $photoHeader=$photosHeader->posts[0]->post_content;
   <div class="lightbox__container">
     <img src="chemin/vers/image.jpg" alt="">
   </div>
-</div>
+</div> -->
 
+    </div>
 
-    <div class="pagination">
-        <?php previous_posts_link("Page précédente", $query->max_num_pages); ?>
-        <?php next_posts_link("Page suivante", $query->max_num_pages); ?>
-    </div>-->
-</div>
-
-<div class="boutonPaginationInfinie">
+    <div class="boutonPaginationInfinie">
 				<button
 				id="boutonPagination"
 				class="boutonPagination" 
 				type="button">Charger plus</button>
-			</div>
-
+    </div>
 </section> 
 
 <?php
+
 get_footer();
