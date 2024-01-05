@@ -8,15 +8,14 @@ $photoHeader=$photosHeader->posts[0]->post_content;
 
 <section class="bannerHero">
     <?php echo $photoHeader ?>
-<img 
-	id="logoHeader"
-    data-parallax="0.4"
-	src="<?php echo get_template_directory_uri() . '/img/Titre header.png'; ?> " 
-	alt="Logo Photographe Event">
+        <img 
+            id="logoHeader"
+            data-parallax="0.4"
+            src="<?php echo get_template_directory_uri() . '/img/Titre header.png'; ?> " 
+            alt="Logo Photographe Event">
 </section>
 
 <section class="cataloguePhotos"> 
-
     <div class="listes">
         <div class="listeCategories">
             <?php 
@@ -29,7 +28,6 @@ $photoHeader=$photosHeader->posts[0]->post_content;
                 );
             ?>
         </div>
-
         <div class="listeFormats">
             <?php 
                 wp_dropdown_categories($args);
@@ -43,6 +41,15 @@ $photoHeader=$photosHeader->posts[0]->post_content;
 
                 wp_dropdown_categories($args);
             ?>
+        </div>     
+        <div class="listeDates">
+            <form id="tri_photos_form" action="" method="get">
+                <select name="ordre_tri" id="ordre_tri">
+                    <option>TRIER PAR</option>
+                    <option value="asc" <?php selected($_GET['ordre_tri'], 'asc'); ?>>Plus anciennes</option>
+                    <option value="desc" <?php selected($_GET['ordre_tri'], 'desc'); ?>>Plus récentes</option>
+                </select>
+            </form>
         </div>
     </div>
 
@@ -90,13 +97,12 @@ $photoHeader=$photosHeader->posts[0]->post_content;
     </div>
 
     <div class="boutonPaginationInfinie">
-				<button
-				id="boutonPagination"
-				class="boutonPagination" 
-				type="button">Charger plus</button>
+        <button
+        id="boutonPagination"
+        class="boutonPagination" 
+        type="button">Charger plus</button>
     </div>
 </section> 
 
 <?php
-
 get_footer();

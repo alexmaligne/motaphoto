@@ -267,8 +267,8 @@ hr {
     display: block;
     width: 34px;
     height: 34px;
-    top: 11px;
-    right: 11px;
+    top: 20px;
+    right: 30px;
     opacity: 0;
 }
 
@@ -280,12 +280,24 @@ hr {
     position: absolute;
     display: block;
     color: white;
-    bottom: 25px;
+    bottom: 35px;
     left: 25px;
     opacity: 0;
 }
 
 .photo:hover #photoReference {
+    opacity: 1;
+}
+
+.photo #photoCategorie {
+    position: absolute;
+    color: white;
+    bottom: 35px;
+    right: 35px;
+    opacity: 0;
+}
+
+.photo:hover #photoCategorie {
     opacity: 1;
 }
 
@@ -410,13 +422,35 @@ h3 {
 }
 
 /* Filtre et tri */
-.listeFormats {
-    width: 70%;
+.listes {
     display: flex;
-    justify-content: space-between;
 }
 
+.listeFormats {
+    width: 50%;
+    margin-left: 100px;
+}
+
+.listeDates{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 100px;
+}
+
+
 select#cat.postform {
+    background-color: transparent;
+    width: 260px;
+    height: 43px;
+    border-radius: 8px;
+    border-width: 1.3px;
+    border-color: #B8BBC2;
+    padding-left:18px;
+    text-transform: uppercase;
+}
+
+select#ordre_tri {
     background-color: transparent;
     width: 260px;
     height: 43px;

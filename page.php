@@ -2,7 +2,6 @@
 /**
  * Template Name: Template à propos
  */
-
  get_header();
 
  /* Start the Loop */
