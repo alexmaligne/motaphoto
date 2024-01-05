@@ -17,14 +17,20 @@ Text Domain:  motaphoto
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap'); 
 
 /* Général */
+html {
+    display: flex;
+    justify-content: center;
+}
+
 body {
     font-family: 'Space Mono', monospace;
+    width: 1440px;
   }
 
 /* Header */
 #logo {
-    max-width: 50%;
-    max-height: 50%;
+   width: 259px;
+   height: 17px;
 }
 
 .header {
@@ -62,7 +68,6 @@ body {
 
 .line {
     border-bottom:1px solid black;
-    margin-left: 1%;
 }
 
 .menuFooter {
@@ -238,7 +243,6 @@ hr {
 
 
 /* Filtre noir et icones */
-
 .filterEye {
     position: absolute;
     top: 10px;
@@ -276,7 +280,7 @@ hr {
     opacity: 1;
 }
 
-.photo #photoReference {
+.home .photo #photoReference {
     position: absolute;
     display: block;
     color: white;
@@ -285,11 +289,11 @@ hr {
     opacity: 0;
 }
 
-.photo:hover #photoReference {
+.home .photo:hover #photoReference {
     opacity: 1;
 }
 
-.photo #photoCategorie {
+.home .photo #photoCategorie {
     position: absolute;
     color: white;
     bottom: 35px;
@@ -297,7 +301,7 @@ hr {
     opacity: 0;
 }
 
-.photo:hover #photoCategorie {
+.home .photo:hover #photoCategorie {
     opacity: 1;
 }
 
@@ -323,7 +327,7 @@ hr {
     background-color: black;
   }
 
-/* Navigation */
+/* Navigation page single photo */
 .blocNavigation {
     height: 118px;
     width: 50vw;
@@ -428,14 +432,14 @@ h3 {
 
 .listeFormats {
     width: 50%;
-    margin-left: 100px;
+    margin-left: 155px;
 }
 
 .listeDates{
     width: 50%;
     display: flex;
     justify-content: flex-end;
-    margin-right: 100px;
+    margin-right: 145px;
 }
 
 
@@ -484,7 +488,18 @@ select#ordre_tri {
     background-color: black;
   }
 
-/* Lightbox 
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 2;
+}
+
 .lightbox__container {
     display: flex;
     align-items: center;
@@ -492,4 +507,9 @@ select#ordre_tri {
     min-height: 100vh;
     margin: 0 50px;
   }
-  */
+
+.lightbox__next {
+    background: url(img/Suivant.png) center center / 100% 100%;
+    width: 25px;
+    height: 2px;
+ }

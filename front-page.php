@@ -16,6 +16,7 @@ $photoHeader=$photosHeader->posts[0]->post_content;
 </section>
 
 <section class="cataloguePhotos"> 
+
     <div class="listes">
         <div class="listeCategories">
             <?php 
@@ -53,7 +54,6 @@ $photoHeader=$photosHeader->posts[0]->post_content;
         </div>
     </div>
 
-
     <div class="photos">
         <?php
         // Créez un objet WP_Query pour récupérer les posts du Custom Post Type
@@ -83,17 +83,6 @@ $photoHeader=$photosHeader->posts[0]->post_content;
                 echo 'Aucun post trouvé.';
             }
         ?>
- 
-<!-- Lightbox 
-<div class="lightbox">
-  <button class="lightbox__close">Fermer</button>
-  <button class="lightbox__next">Suivant</button>
-  <button class="lightbox__prev">Précédent</button>
-  <div class="lightbox__container">
-    <img src="chemin/vers/image.jpg" alt="">
-  </div>
-</div> -->
-
     </div>
 
     <div class="boutonPaginationInfinie">
@@ -102,6 +91,16 @@ $photoHeader=$photosHeader->posts[0]->post_content;
         class="boutonPagination" 
         type="button">Charger plus</button>
     </div>
+
+    <!-- Lightbox 
+    <div class="lightbox">
+        <button class="lightbox__close">Fermer</button>
+        <button class="lightbox__next">Suivant</button>
+        <button class="lightbox__prev">Précédent</button>
+        <div class="lightbox__container">
+            <img src="<?php echo get_template_directory_uri() . '/img/Icon_fullscreen.png'; ?>" alt="test">
+        </div>
+    </div>-->
 </section> 
 
 <?php
