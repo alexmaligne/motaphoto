@@ -11,8 +11,8 @@
                 <div class="lightbox__container">
                     <img src="" alt="test">
                 </div>
-                <span id="photoReference"></span>
-                <span id="photoCategorie"></span>
+                <span class="photoReference">Référence</span>
+                <span class="photoCategorie">Catégorie</span>
             </div>
 
             <div class="footer">

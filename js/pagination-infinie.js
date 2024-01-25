@@ -38,7 +38,7 @@ async function addPhotos(){
 
         let spanPhotoReference = document.createElement("span")
         spanPhotoReference.innerText=photo.acf.reference
-        spanPhotoReference.setAttribute("id","photoReference")
+        spanPhotoReference.setAttribute("class","photoReference")
         let spanPhotoCategorie = document.createElement("span")
 
         categorieData.forEach((categorie)=>{
@@ -46,7 +46,7 @@ async function addPhotos(){
                 spanPhotoCategorie.innerText=categorie.name
             }
         });
-        spanPhotoCategorie.setAttribute("id","photoCategorie")
+        spanPhotoCategorie.setAttribute("class","photoCategorie")
 
         div.appendChild(divFilterEye)
         divFilterEye.appendChild(imgIconEye)
@@ -57,6 +57,8 @@ async function addPhotos(){
         lien.appendChild(div)
         photos.appendChild(lien)
     })
+
+    activeLightbox()
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{

@@ -13,8 +13,8 @@ get_header();
 			<div class="textPhoto">
 				<div class="text">
 					<?php the_title('<h2>', '</h2>'); ?>
-					<p>RÉFÉRENCE : <span id="photoReference"><?php echo get_field( "reference" ) ?></span></p>
-					<p>CATÉGORIE : <span id="photoCategorie"><?php echo $categorie[0]->name; ?></span></p>
+					<p>RÉFÉRENCE : <span class="photoReference"><?php echo get_field( "reference" ) ?></span></p>
+					<p>CATÉGORIE : <span class="photoCategorie"><?php echo $categorie[0]->name; ?></span></p>
 					<p>FORMAT : <span id="photoFormat"><?php echo $format[0]->name; ?></span></p> 
 					<p>TYPE : <span id="photoType"><?php echo get_field( "type" ) ?></span></p>
 					<p>ANNÉE : <span id="photoAnnee"><?php echo get_field( "annee" ) ?></span></p>

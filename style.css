@@ -280,7 +280,7 @@ hr {
     opacity: 1;
 }
 
-.home .photo #photoReference {
+.home .photo .photoReference {
     position: absolute;
     display: block;
     color: white;
@@ -289,11 +289,11 @@ hr {
     opacity: 0;
 }
 
-.home .photo:hover #photoReference {
+.home .photo:hover .photoReference {
     opacity: 1;
 }
 
-.home .photo #photoCategorie {
+.home .photo .photoCategorie {
     position: absolute;
     color: white;
     bottom: 35px;
@@ -301,7 +301,7 @@ hr {
     opacity: 0;
 }
 
-.home .photo:hover #photoCategorie {
+.home .photo:hover .photoCategorie {
     opacity: 1;
 }
 
@@ -406,6 +406,7 @@ h3 {
 
 .blocPhotosApparentees {
     display: flex;
+    margin-bottom: 60px;
 }
 
 .affichagePhotoApparantees {
@@ -413,12 +414,12 @@ h3 {
     height: 60vh;
 }
 
-.boutonPhotos {
+/*.boutonPhotos {
     display: flex;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 30px;
-}
+}*/
 
 /* Pagination */
 .pagination .current {
@@ -510,8 +511,9 @@ select#ordre_tri {
 }
 
 .lightbox__container img {
-    max-width: 100%;
-    height: auto;
+    height: 495px;
+    width: 564px;
+    object-fit: cover;
     z-index: 12;
     opacity: 1;
 }
@@ -566,22 +568,22 @@ select#ordre_tri {
     border: none;
 }
 
-.lightbox #photoReference {
+.lightbox .photoReference {
     position: absolute;
     display: block;
     color: white;
     font-size: 12px;
-    top: 10px;
-    right: 10px;
+    top: 720px;
+    left: 440px;
 }
 
-.lightbox #photoCategorie {
+.lightbox .photoCategorie {
     position: absolute;
+    top: 720px;
+    right: 450px;
     display: block;
     color: white;
     font-size: 12px;
-    top: 10px;
-    right: 10px;
 }
 
 .lightbox .fadeOut {

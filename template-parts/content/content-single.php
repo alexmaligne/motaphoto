@@ -14,8 +14,8 @@
             src="<?php echo get_template_directory_uri() . '/img/Icon_fullscreen.png'; ?> "
             alt="Icone plein écran" />
 
-        <span id="photoReference"><?php echo get_field( "reference" ) ?></span>
-        <span id="photoCategorie"><?php echo $categorie[0]->name; ?></span>
+        <span class="photoReference"><?php echo get_field( "reference" ) ?></span>
+        <span class="photoCategorie"><?php echo $categorie[0]->name; ?></span>
         
         <?php
             the_content();
