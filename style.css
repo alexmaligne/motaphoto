@@ -510,12 +510,17 @@ select#ordre_tri {
     margin-right: 200px;
 }
 
-.lightbox__container img {
-    height: 495px;
-    width: 564px;
-    object-fit: cover;
+.lightbox__container .lightboxContainerImg img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
     z-index: 12;
     opacity: 1;
+}
+
+.lightboxContainerImg {
+    height: 800px;
 }
 
 .lightbox__next,
@@ -588,4 +593,20 @@ select#ordre_tri {
 
 .lightbox .fadeOut {
     opacity:0;
+}
+
+
+/* Media Queries Desktop */
+@media screen and (min-width:1024px) and (max-width:1200px) {
+
+}
+
+/* Media Queries Tablettes */
+@media screen and (min-width:600px) and (max-width:1024px) {
+
+}
+
+/* Media Queries Smartphone */
+@media screen and (min-width:320px) and (max-width:600px) {
+
 }

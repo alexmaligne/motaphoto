@@ -9,7 +9,7 @@
                 <button class="lightbox__next">Suivant<span class="arrowNext"></span></button>
                 <button class="lightbox__prev"><span class="arrowPrev"></span>Précédent</button>
                 <div class="lightbox__container">
-                    <img src="" alt="test">
+                    <div class="lightboxContainerImg"><img src="" alt="test"></div>
                 </div>
                 <span class="photoReference">Référence</span>
                 <span class="photoCategorie">Catégorie</span>
